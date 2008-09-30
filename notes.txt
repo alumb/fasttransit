@@ -1,0 +1,6 @@
+08/02 11:14 < Xore> at best, you want to ping the directory you'll expect the updates to show up in
+08/02 11:14 < yangman> it's the reason why SFU busses' schedule change NOT during semester breaks
+08/02 11:14 < Xore> ie, currently, it's /38/
+08/02 11:14 < yangman> I don't recall when anymore
+08/02 11:14 < Xore> ping /39/, when you stop getting 404's then it's time to scrape
+
