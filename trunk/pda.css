@@ -1,0 +1,35 @@
+.PDA {
+
+	border-right:solid #111 1px;
+	border-left:solid #111 1px;
+	border-bottom:solid #111 1px;
+	width:230px;
+	float:left;
+	margin:0 5px 10px 5px;
+}
+
+.PDA TD {
+	background-color:white;
+	text-align:center;
+	font-size:9px;
+	padding:0px;
+	vertical-align: top;
+	border-top:solid #111 1px;
+	line-height:7px;
+}
+
+.PDA TD.title {
+	background-color:white;
+	font-size:9px;
+	font-weight:normal;
+	line-height:8px;
+}
+
+.PDA TD.title img {
+	display:none;
+}
+
+p {
+	font-size:5px;
+	clear:both;
+}
