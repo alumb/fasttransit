@@ -3,6 +3,8 @@
 <head>
 	<title>Fast Transit</title>
 	<link rel="stylesheet" href="mainStyles.css" type="text/css" />
+	<link media="only screen and (max-device-width: 480px)" href="iPhone.css" type="text/css" rel="stylesheet" />
+	<meta name="viewport" content="width=800, inital-scale=3" />
 	<script language="javascript" src="interface.js"></script>
 	<script language="javascript" src="quickList.js"></script>
 </head>
@@ -48,7 +50,7 @@
 			Sunday / Holidays:<input type="radio" name="dow" id="dow" value="sun" onclick="changeDOW('sun')" <?php if($currentDate['wday']==0) echo "CHECKED";?>/>
 		</span>
 		<div class="title">
-			Route Times
+			Route Times <span id="bookmarkLink"></span>
 		</div>
 		<div id="timesTableHeaderDiv"><table id="timesTableHeader" class="timesTable" border=0></table></div>
 		<iframe id="timesIframe" src="splash.htm"></iframe>
@@ -61,6 +63,7 @@
 
 <script language="javascript">
 	attachQuickList(document.getElementById("routeID"),document.getElementById("routeList"), "/^0*%1/i", changeRoute);
+	if(window.location.search.length > 0) parseQueryString(window.location.search.substring(1));
 	if(document.getElementById("routeID").value=="filter route #") document.getElementById("routeID").focus();
 </script>
 

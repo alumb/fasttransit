@@ -1,3 +1,51 @@
+function parseQueryString(qs) {
+	// eg LineDirID=107580&StopIDs=50530,52714&dow=week
+	var queryString = splitStringOn(qs, "&", "=");
+	
+	//set route
+	if(queryString["LineDirID"] == null) return;
+	var routeBox = document.getElementById("routeID");
+	for(var index=0; index<routeBox.quickList.length; index++) {
+		if(routeBox.quickList[index].getAttribute("data").split(",")[0] == queryString["LineDirID"]) {
+			routeBox.value = routeBox.quickList[index].innerHTML;
+			break;
+		}
+	}
+	routeBox.onkeyup();
+	var err = new Object();
+	err.keyCode = 10;
+	routeBox.onkeyup(err);
+	
+	//set stops
+	if(queryString["StopIDs"] == null) return;
+	var route = document.getElementById("route")
+	route.LineDirID = queryString["LineDirID"];
+	route.stopIDs = queryString["StopIDs"].split(",");
+	route.DOW = ((queryString["dow"] != null) ? queryString["dow"] : 'week');
+	drawIframe(true);
+	
+}
+
+function splitStringOn(str, s1, s2) {
+	returnValue = new Array;
+	groups = str.split(s1);
+	if (groups.length == 0) return;
+	for(var i=0;i<groups.length;i++) {
+		parts = groups[i].split(s2);
+		switch(parts.length) {
+			case 1: 
+				returnValue[parts[0]] = "";
+				break;
+			case 2:
+				returnValue[parts[0]] = parts[1];
+				break;
+			default:
+				throw new Error("invalid query string");
+		}
+	}
+	return returnValue;
+}
+
 // ------------------ StopNav-----------------
 function changeRoute(routeString,routeID,updateControl) {
 	var split = routeID.split(',');
@@ -72,10 +120,12 @@ function drawIframe(redraw) {
 			drawTableHeader();
 			offsetTable();
 		}
+		updateBookmarkLink(route);
 	}
 	else {
 		iframe.contentDocument.location="splash.htm";
 		drawTableHeader();
+		updateBookmarkLink(null);
 	}
 }
 
@@ -97,6 +147,15 @@ function offsetTable() {
 	}
 	table.rows[index].className = "currentRow";
 	if(offset!=0) iframe.contentWindow.scrollTo(0,offset);
+}
+
+function updateBookmarkLink (route) {
+	var bmLink = document.getElementById("bookmarkLink");
+	if(bmLink == null) return;
+	if(route != null) 
+		bmLink.innerHTML = "<a href=\"index.php?LineDirID="+route.LineDirID+"&StopIDs="+route.stopIDs.join(",")+"&dow="+route.DOW+"\">(bookmark link)</a>";
+	else
+		bmLink.innerHTML = "";
 }
 
 function drawTableHeader() {
