@@ -9,7 +9,8 @@ function attachQuickList(textBox, list, searchString, onselect) {
 }
 
 function resortList(e) {
-	if(e!=null && e.keyCode==13) {
+	//alert(e.keyCode);
+	if(e!=null && (e.keyCode==13 || e.keyCode==10)) {
 		for(var index=0; index<this.quickList.length; index++) {
 			if(this.quickList[index].className == "active first") {
 				this.onSelectFunction(this.quickList[index].innerHTML,this.quickList[index].getAttribute("data"));
