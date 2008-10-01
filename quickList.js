@@ -49,6 +49,7 @@ function resortList(e) {
 		}
 	}
 	else {
+		if(e!=null && e.keyCode==27) this.value = ""; 
 		var filterRegex = eval(this.searchString.replace(/%1/g,slashify(this.value)));
 		var firstFound = false;
 		for(var index=0; index<this.quickList.length; index++) {
