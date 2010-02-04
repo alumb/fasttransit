@@ -1,0 +1,201 @@
+/******* Layout *********/
+
+div {
+	padding:0.1em;
+	padding-left:0.2em;
+}
+
+#routeSelect {
+	width:5em;
+	float:left;
+	padding-right:0px;
+}
+
+.search {
+	padding-left:0.5em;
+}
+
+#routeSelect .search input[type="text"] {
+	width:5em;
+}
+
+#routeSelect UL, #stopNav UL { 
+	padding-left:0px;
+	margin:0.1em;
+	margin-right:0px;
+	list-style-type:none;
+}
+
+#routeSelect LI, #stopNav LI {
+	padding-left:0.5em;
+	font-size:smaller;
+}
+#stopNav LI {
+	padding-top:0.05em;
+  padding-bottom:0.05em;
+}
+
+#routeSelect LI:hover, #stopNav LI:hover, #adminLinks a:hover{
+text-decoration:underline;
+}
+#route {
+	margin-left:5.2em;
+	border:solid #c3d9ff 3px;
+	padding:0px;
+	min-height:6em;
+	background-color:#c3d9ff;
+}
+
+#routeMap  {
+	display:none;
+	font-size:small;
+	color:blue;
+	padding-left:1em;
+}
+
+#validUntil{
+	float:right;
+	font-size:small;
+	font-weight:lighter;	
+	padding-top:4px;
+}	
+
+#adminLinks {
+	float:right;
+}
+#adminLinks a {
+	font-size:small;
+	cursor:pointer;
+	font-weight:lighter;
+}
+
+#adminScheduleLink, #adminUpdateLineLink {
+	display:none
+}
+
+#stopNav {
+	border:solid #c3d9ff 0.1em;
+	float:left;
+	width:15em;
+	background-color:#E0Ecff;
+	padding:0px;
+}
+
+#stopNav .search input[type="text"] {
+	width:17em;
+}
+
+#routeInfo {
+	border:solid #c3d9ff 0.1em;
+	margin-left:15.5em;
+	min-height:5em;
+	background-color:#E0Ecff;
+}
+
+#stopList {
+	margin:0px;
+}
+
+#stopNav LI {
+	border-bottom:solid #bbb 1px;
+}
+
+#dowSpan {
+	float:right;
+}
+
+#timesIframe {
+	width:100%;
+	height:90%;
+	border:2px #E0Ecff outset;
+}
+
+#notAvailable {
+	color:red;
+	margin:1em;
+	font-style:italic;
+}
+
+.timesTable {
+	border-bottom:solid #bbb 1px;
+	border-right:solid #bbb 1px;
+	border-left:solid #bbb 1px;
+	width:100%;
+}
+
+.timesTable .currentRow TD {
+	background-color:#FFFFCC !important;
+}
+
+.timesTable TD {
+	background-color:white;
+	text-align:center;
+	padding:0.2em;
+	border-top:solid #bbb 1px;
+	border-right:solid #E0Ecff 2px;
+	border-bottom:solid #E0Ecff 2px;
+}
+
+.timesTable TD.title {
+	background-color:#E0Ecff;
+	font-size:small;
+}
+
+.timesTable TD.title img {
+	cursor:pointer;
+	margin-left:6px;
+	margin-top:4px;
+}
+
+#timesTableHeaderDiv {
+	margin-left:0px;
+	margin-right:13px; !
+}
+
+#bookmarkLink {
+	font-size:small;
+	color:blue;
+	padding-left:1em;
+}
+
+#updateFrame {
+	display:none;
+}
+#updateIframe {
+	width:100%;
+	height:95%;
+	border:2px #E0Ecff outset;
+}
+
+/******* Fonts *********/
+
+.title {
+	font-weight:bold;
+}
+
+.larger {
+	font-size:larger;
+}
+.smaller {
+	font-size:smaller;
+}
+
+LI.active {
+	display:block;
+	cursor:pointer;
+}
+
+LI.first {
+	font-weight:bold;
+	background-color:#c3d9ff;
+}
+
+LI.disabled {
+	color:gray;
+	display:block;
+	cursor:default;
+}
+
+LI.inactive {
+	display:none;
+}
