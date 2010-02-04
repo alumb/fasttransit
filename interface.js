@@ -66,7 +66,7 @@ function changeRoute(routeString,routeID,updateControl) {
 		toggleAdminMode(false);
 						
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "getStops.php?" + split[0] , false);
+	xmlHttp.open("GET", "getStops.py?route_id=" + split[0] , false);
 	xmlHttp.send(null);
 	document.getElementById("stopList").innerHTML = xmlHttp.responseText;
 	attachQuickList(document.getElementById("stopName"),document.getElementById("stopList"), "/( %1)|(^%1.*)/i",addStopTimes);
