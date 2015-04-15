@@ -1,0 +1,1 @@
+A web app that allows fast look up of a bus time for any bus in the GVRD. The server portion caches the times scraped off of translinks website. The client uses ajax to quickly retrieve these times and display them in a useful fashion.
